@@ -7,9 +7,9 @@ _Authors: tbd
 *Do not hesitate to contact your QM Customer Success Specialist!*
 
 ## Introduction
-Two-Qubit Randomized Benchmarking describes a protocol that allows to experimentally quantify the performance of a quantum processor by applying sequences of randomly sampled Clifford gates and measuring the average error rate. Due to its universality it has been implemented in various qubit platforms such as trapped-ions [1], NMR [2], spin [3] and superconducting qubits [4].
+Two-Qubit Randomized Benchmarking describes a protocol that allows to experimentally quantify the performance of a quantum processor by applying sequences of randomly sampled Clifford gates and measuring the average error rate. Due to its universality it has been implemented in various qubit platforms such as trapped-ions [^1], NMR [2], spin [3] and superconducting qubits [4].
 
-[1] Knill et al (2008 Phys. Rev. A 77 012307)
+[^1] Knill et al (2008 Phys. Rev. A 77 012307)
 [2] C A Ryan et al 2009 New J. Phys. 11 013034
 [3] X. Xue et al Phys. Rev. X 9, 021011
 [4] A. D. Córcoles et al Phys. Rev. A 87, 030301(R)
