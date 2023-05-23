@@ -33,7 +33,7 @@ The class itself is generic for 2 QB RB and can be implemented for different arc
 ```python
 rb = TwoQubitRb(config, single_qubit_gate_generator, two_qubit_gate_generators, prep_func, measure_func, verify_generation=True)
 ```
-**TwoQubitRb**: The class for generating the configuration and running two-qubit randomized benchmarking experiments with the OPX//
+**TwoQubitRb**: The class for generating the configuration and running two-qubit randomized benchmarking experiments with the OPX\\
 **config**: dict – Standard configuration “config” containing the relevant experimental details (e.g. what analog outputs are connected to the xy drive, z flux line, etc.).
 **single_qubit_gate_generator**: A callable used to generate a generic (baked) single qubit gate using a signature similar to phasedXZ
 **two_qubit_gate_generators**: Mapping two qubit gate names to callables used to generate the (baked) gates (needs at least one two-qubit gate). Can contain all two-qubit gates implemented by the user.
