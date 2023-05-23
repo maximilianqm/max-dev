@@ -34,12 +34,12 @@ The class itself is generic for 2 QB RB and can be implemented for different arc
 rb = TwoQubitRb(config, single_qubit_gate_generator, two_qubit_gate_generators, prep_func, measure_func, verify_generation=True)
 ```
 
-**TwoQubitRb**: The class for generating the configuration and running two-qubit randomized benchmarking experiments with the OPX
-**config**: dict – Standard configuration “config” containing the relevant experimental details (e.g. what analog outputs are connected to the xy drive, z flux line, etc.).
-**single_qubit_gate_generator**: A callable used to generate a generic (baked) single qubit gate using a signature similar to phasedXZ
-**two_qubit_gate_generators**: Mapping two qubit gate names to callables used to generate the (baked) gates (needs at least one two-qubit gate). Can contain all two-qubit gates implemented by the user.
-**prep_func**: Callable used to reset the qubits to the |00> state. This function does not use the baking object, and is a proper QUA code macro (e.g. wait() statement or active reset protocol).
-**measure_func**: A callable used to measure the qubits. This function does not use the baking object, and is a proper QUA code macro. Returns a tuple containing the measured values of the two qubits as QUA expressions. The expression must evaluate to a Boolean value. False means |0>, True means |1>. The most significant bit (MSB) is the first qubit. 
+- **TwoQubitRb**: The class for generating the configuration and running two-qubit randomized benchmarking experiments with the OPX
+- **config**: dict – Standard configuration “config” containing the relevant experimental details (e.g. what analog outputs are connected to the xy drive, z flux line, etc.).
+- **single_qubit_gate_generator**: A callable used to generate a generic (baked) single qubit gate using a signature similar to phasedXZ
+- **two_qubit_gate_generators**: Mapping two qubit gate names to callables used to generate the (baked) gates (needs at least one two-qubit gate). Can contain all two-qubit gates implemented by the user.
+- **prep_func**: Callable used to reset the qubits to the |00> state. This function does not use the baking object, and is a proper QUA code macro (e.g. wait() statement or active reset protocol).
+- **measure_func**: A callable used to measure the qubits. This function does not use the baking object, and is a proper QUA code macro. Returns a tuple containing the measured values of the two qubits as QUA expressions. The expression must evaluate to a Boolean value. False means |0>, True means |1>. The most significant bit (MSB) is the first qubit. 
 verify_generation: bool = False
 
 ### Run the 2 QB RB 
@@ -51,10 +51,10 @@ res = rb.run(qmm, circuit_depths=[1, 2, 3, 4, 5], num_circuits_per_depth=50, num
 ```
 
 For running the experiment the user has to specify the following arguments:
-**qmm**: The quantum machine manager instance, on which the 2-Qubit-RB will be executed on.
-**circuit_depths**: Number of consecutive clifford gates (layers) per sequence (not including the inverse, more info on depth: https://qiskit.org/documentation/apidoc/circuit.html).
-**num_circuits_per_depth**: The amount of different circuit randomizations (combination of Cliffords) in each sequence. 
-**num_shots_per_circuit**: The number of repetitions of the same circuit of a depth, e.g. used for averaging.
+- **qmm**: The quantum machine manager instance, on which the 2-Qubit-RB will be executed on.
+- **circuit_depths**: Number of consecutive clifford gates (layers) per sequence (not including the inverse, more info on depth: https://qiskit.org/documentation/apidoc/circuit.html).
+- **num_circuits_per_depth**: The amount of different circuit randomizations (combination of Cliffords) in each sequence. 
+- **num_shots_per_circuit**: The number of repetitions of the same circuit of a depth, e.g. used for averaging.
 
 ### Gate Definition
 Gate generation is performed using the Baking class. This class adds to QUA the ability to generate arbitrary waveforms ("baked waveforms") using syntax similar to QUA. 
@@ -68,11 +68,11 @@ def bake_phased_xz(baker: Baking, q, x, z, a):
 ```
 single_qubit_gate_generator: A callable used to generate a single qubit gate using a signature similar to `phasedXZ`.
 Callable arguments:  
-**baking**: The baking object. 
-**qubit**: The qubit number. 
-**x**: The x rotation exponent. 
-**z**: The z rotation exponent. 
-**a**: the axis phase exponent. 
+- **baking**: The baking object. 
+- **qubit**: The qubit number. 
+- **x**: The x rotation exponent. 
+- **z**: The z rotation exponent. 
+- **a**: the axis phase exponent. 
  
 #### two_qubit_gate_generators
 ```python
@@ -91,9 +91,9 @@ def bake_cz(baker: Baking, q1, q2):
 ```
 Mapping one or more two qubit gate names to callables used to generate those gates.
 Callable arguments: 
-**baking**: The baking object. 
-**qubit1**: The first qubit number. 
-**qubit2**: The second qubit number. 
+- **baking**: The baking object. 
+- **qubit1**: The first qubit number. 
+- **qubit2**: The second qubit number. 
 
 ### State Preparation
 ```python
