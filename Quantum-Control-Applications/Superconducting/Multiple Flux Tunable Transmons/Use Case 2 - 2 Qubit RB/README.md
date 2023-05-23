@@ -17,7 +17,7 @@ Two-Qubit Randomized Benchmarking describes a protocol that allows to experiment
 ## Experimental Setup
 The use-case in this example is tailored for a superconducting quantum processor using flux-tunable transmon qubits, where we focus on a subset of two qubits that are capacitively coupled to each other. Single qubit operations are controlled by sending microwave pulses through a xy-line that is capacitively coupled to the individual qubits. The two-qubit gate is implemented by a controlled-Z (CZ) gate utilizing the fast-flux lines to rapidly change the qubit frequencies and the capacitive coupling between both qubits. Part of the optimization protocol for tuning up a CZ gate can be found in the use-case Two-Qubit Gate Optimization.
 
-**Prerequisites**
+## Prerequisites
 - Calibrated Single Qubit Gates?
 - Calibrated CZ Gate
 - Calibrated Measurement Protocol for State Discrimination
@@ -33,7 +33,8 @@ The class itself is generic for 2 QB RB and can be implemented for different arc
 ```python
 rb = TwoQubitRb(config, single_qubit_gate_generator, two_qubit_gate_generators, prep_func, measure_func, verify_generation=True)
 ```
-**TwoQubitRb**: The class for generating the configuration and running two-qubit randomized benchmarking experiments with the OPX\\
+
+**TwoQubitRb**: The class for generating the configuration and running two-qubit randomized benchmarking experiments with the OPX
 **config**: dict – Standard configuration “config” containing the relevant experimental details (e.g. what analog outputs are connected to the xy drive, z flux line, etc.).
 **single_qubit_gate_generator**: A callable used to generate a generic (baked) single qubit gate using a signature similar to phasedXZ
 **two_qubit_gate_generators**: Mapping two qubit gate names to callables used to generate the (baked) gates (needs at least one two-qubit gate). Can contain all two-qubit gates implemented by the user.
@@ -43,10 +44,12 @@ verify_generation: bool = False
 
 ### Run the 2 QB RB 
 The experiment is run by calling the run method of the previously generated program rb.
+
 ```python
 qmm = QuantumMachinesManager('127.0.0.1',8080)
 res = rb.run(qmm, circuit_depths=[1, 2, 3, 4, 5], num_circuits_per_depth=50, num_shots_per_circuit=1000)
 ```
+
 For running the experiment the user has to specify the following arguments:
 **qmm**: The quantum machine manager instance, on which the 2-Qubit-RB will be executed on.
 **circuit_depths**: Number of consecutive clifford gates (layers) per sequence (not including the inverse, more info on depth: https://qiskit.org/documentation/apidoc/circuit.html).
@@ -71,11 +74,6 @@ Callable arguments:
 **z**: The z rotation exponent. 
 **a**: the axis phase exponent. 
  
-
-
-
-
-
 #### two_qubit_gate_generators
 ```python
 qubit1_frame_update = 0.23  # example, should be taken from QPU parameters
@@ -104,8 +102,6 @@ def prep():
     align()
 ```
 This example of the state preparation simply uses a thermal reset using the QUA wait() command. It is executed between sequences to ensure that the initial state of the qubit pair is |00>. More advanced preparation protocols (e.g. active reset) can be implemented in this macro.
-
-
 
 
 ### Measurement
