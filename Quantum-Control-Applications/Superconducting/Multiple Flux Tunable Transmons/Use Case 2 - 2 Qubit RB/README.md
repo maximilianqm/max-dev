@@ -15,6 +15,8 @@ Two-Qubit Randomized Benchmarking describes a protocol that allows to experiment
 [^4]: A. D. Córcoles et al Phys. Rev. A 87, 030301(R)
 
 ## Experimental Setup
+<img align="right" src="setup.PNG" alt="drawing" width="400"/>
+
 The use-case in this example is tailored for a superconducting quantum processor using flux-tunable transmon qubits, where we focus on a subset of two qubits that are capacitively coupled to each other. Single qubit operations are controlled by sending microwave pulses through a xy-line that is capacitively coupled to the individual qubits. The two-qubit gate is implemented by a controlled-Z (CZ) gate utilizing the fast-flux lines to rapidly change the qubit frequencies and the capacitive coupling between both qubits. Part of the optimization protocol for tuning up a CZ gate can be found in the use-case Two-Qubit Gate Optimization.
 
 ## Prerequisites
