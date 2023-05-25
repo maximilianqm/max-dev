@@ -3,7 +3,7 @@
 _Authors: tbd
 
 *Important note: The code in this folder was used for running the experiment on a*
-*specifically tailored setup and software environment. When adapting the code to match your setup, make sure to adjust the relevant functions and parameters and contact QM Customer Success!*
+*specifically tailored setup and software environment. When adapting the code to run on your device, make sure to adjust the relevant functions and parameters and contact QM Customer Success!*
 
 ## Introduction
 Two-Qubit Randomized Benchmarking describes a protocol that allows to experimentally quantify the performance of a quantum processor by applying sequences of randomly sampled Clifford gates and measuring the average error rate. Due to its universality it has been implemented in various qubit platforms such as trapped-ions [^1], NMR [^2], spin [^3] and superconducting qubits [^4].
