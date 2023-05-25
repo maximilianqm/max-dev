@@ -15,7 +15,7 @@ Two-Qubit Randomized Benchmarking describes a protocol that allows to experiment
 [^4]: A. D. Córcoles et al Phys. Rev. A 87, 030301(R)
 
 ## Experimental Setup
-<img align="right" width="400" height="400" src="https://github.com/maximilianqm/max-dev/blob/main/Quantum-Control-Applications/Superconducting/Multiple%20Flux%20Tunable%20Transmons/Use%20Case%202%20-%202%20Qubit%20RB/setup.png" >
+<img align="right" width="400" src="https://github.com/maximilianqm/max-dev/blob/main/Quantum-Control-Applications/Superconducting/Multiple%20Flux%20Tunable%20Transmons/Use%20Case%202%20-%202%20Qubit%20RB/setup.png" >
 
 
 
