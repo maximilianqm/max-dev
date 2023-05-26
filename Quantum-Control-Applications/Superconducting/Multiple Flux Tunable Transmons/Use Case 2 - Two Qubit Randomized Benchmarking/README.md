@@ -1,6 +1,6 @@
 # Two-Qubit Randomized Benchmarking
 
-_Authors: Maximilian Zanner
+Author: Maximilian Zanner
 
 *Important note: The code in this folder was used for running the experiment on a*
 *specifically tailored setup and software environment. When adapting the code to run on your device, make sure to adjust the relevant functions and parameters and contact QM Customer Success!*
@@ -62,7 +62,7 @@ For running the experiment the user has to specify the following arguments:
 - **num_shots_per_circuit**: The number of repetitions of the same circuit of a depth, e.g. used for averaging.
 
 ### Gate Definition
-Gate generation is performed using the Baking class. This class adds to QUA the ability to generate arbitrary waveforms ("baked waveforms") using syntax similar to QUA. 
+Gate generation is performed using the *baking* class. This class adds to QUA the ability to generate arbitrary waveforms ("baked waveforms") using syntax similar to QUA. 
 #### single_qubit_gate_generator
 ```python
 def bake_phased_xz(baker: Baking, q, x, z, a):
