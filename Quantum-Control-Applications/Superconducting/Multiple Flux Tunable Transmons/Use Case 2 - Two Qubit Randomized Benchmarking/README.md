@@ -1,12 +1,12 @@
 # Two-Qubit Randomized Benchmarking
 
-_Authors: tbd
+_Authors: Maximilian Zanner
 
 *Important note: The code in this folder was used for running the experiment on a*
 *specifically tailored setup and software environment. When adapting the code to run on your device, make sure to adjust the relevant functions and parameters and contact QM Customer Success!*
 
 ## Introduction
-Two-Qubit Randomized Benchmarking describes a protocol that allows to experimentally quantify the performance of a quantum processor by applying sequences of randomly sampled Clifford gates and measuring the average error rate. Due to its universality it has been implemented in various qubit platforms such as trapped-ions [^1], NMR [^2], spin [^3] and superconducting qubits [^4].
+Two-Qubit Randomized Benchmarking has become a popular protocol that allows to experimentally quantify the performance of a quantum processor by applying sequences of randomly sampled Clifford gates and measuring the average error rate. Due to its universality it has been implemented in various qubit platforms such as trapped-ions [^1], NMR [^2], spin [^3] and superconducting qubits [^4]. In this use-case example we introduce the  
 
 [^1]: Knill et al (2008 Phys. Rev. A 77 012307)
 [^2]: C A Ryan et al 2009 New J. Phys. 11 013034
@@ -21,14 +21,13 @@ Two-Qubit Randomized Benchmarking describes a protocol that allows to experiment
 The use-case in this example is tailored for a superconducting quantum processor using flux-tunable transmon qubits, where we focus on a subset of two qubits that are capacitively coupled to each other. Single qubit operations are controlled by sending microwave pulses through a xy-line that is capacitively coupled to the individual qubits. The two-qubit gate is implemented by a controlled-Z (CZ) gate utilizing the fast-flux lines to rapidly change the qubit frequencies and the capacitive coupling between both qubits. Part of the optimization protocol for tuning up a CZ gate can be found in the use-case Two-Qubit Gate Optimization.
 
 ## Prerequisites
-- Calibrated Single Qubit Gates?
+- \textcolor{red}{OPX+, QOP Version > 20???, QUA Version ???, py-qua-tools > ???}
+- Calibrated Single Qubit Gates
 - Calibrated CZ Gate
-- Calibrated Measurement Protocol for State Discrimination
+- Calibrated Measurement Protocol for 2-State Discrimination for both Qubits
 
 ## Implementation in QUA
-The following procedure implements Two-Qubit Randomized Benchmarking with the described setup and the TwoQubitRb class. The decomposition of the two-qubit unitaries into CZ and single qubit gates is given in Ref. [^5]. The circuit generation and randomization is done prior to the execution using tableaux calculation, also to find the inverse circuit.
-Now it uses input stream to execute randomized circuit - future should be randomization done on FPGA - something we can benchmark
-The class itself is generic for 2 QB RB and can be implemented for different architectures by replacing the native single and two-qubit gates using the generator functions.
+The following procedure implements Two-Qubit Randomized Benchmarking with the described setup and the *TwoQubitRb* class. The decomposition of the two-qubit unitaries into CZ and single qubit gates is given in Ref. [^5]. \textcolor{red}{The circuit generation is done using the *baking* tool from the *py-qua-tools* library. Randomization is done prior to the execution using tableau calculation, also to find the inverse operation. The sequences are passed to the OPX using *input stream*.}
 
 [^5]: Barends, R. et al. Nature 508, 500–503 (2014)
 
