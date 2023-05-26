@@ -6,7 +6,7 @@ _Authors: Maximilian Zanner
 *specifically tailored setup and software environment. When adapting the code to run on your device, make sure to adjust the relevant functions and parameters and contact QM Customer Success!*
 
 ## Introduction
-Two-Qubit Randomized Benchmarking has become a popular protocol that allows to experimentally quantify the performance of a quantum processor by applying sequences of randomly sampled Clifford gates and measuring the average error rate. Due to its universality it has been implemented in various qubit platforms such as trapped-ions [^1], NMR [^2], spin [^3] and superconducting qubits [^4]. In this use-case example we introduce the  
+Two-Qubit Randomized Benchmarking has become a popular protocol that allows to experimentally quantify the performance of a quantum processor by applying sequences of randomly sampled Clifford gates and measuring the average error rate. Due to its universality it has been implemented in various qubit platforms such as trapped-ions [^1], NMR [^2], spin [^3] and superconducting qubits [^4]. In this use-case example we introduce a possible implementation on the OPX+ using the generic *TwoQubitRb* class.
 
 [^1]: Knill et al (2008 Phys. Rev. A 77 012307)
 [^2]: C A Ryan et al 2009 New J. Phys. 11 013034
@@ -15,8 +15,6 @@ Two-Qubit Randomized Benchmarking has become a popular protocol that allows to e
 
 ## Experimental Setup
 <img align="right" width="400" src="https://github.com/maximilianqm/max-dev/blob/main/Quantum-Control-Applications/Superconducting/Multiple%20Flux%20Tunable%20Transmons/Use%20Case%202%20-%20Two%20Qubit%20Randomized%20Benchmarking/setup.png">
-
-
 
 The use-case in this example is tailored for a superconducting quantum processor using flux-tunable transmon qubits, where we focus on a subset of two qubits that are capacitively coupled to each other. Single qubit operations are controlled by sending microwave pulses through a xy-line that is capacitively coupled to the individual qubits. The two-qubit gate is implemented by a controlled-Z (CZ) gate utilizing the fast-flux lines to rapidly change the qubit frequencies and the capacitive coupling between both qubits. Part of the optimization protocol for tuning up a CZ gate can be found in the use-case Two-Qubit Gate Optimization.
 
