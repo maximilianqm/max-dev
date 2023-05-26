@@ -25,7 +25,7 @@ The use-case in this example is tailored for a superconducting quantum processor
 - Calibrated Measurement Protocol for 2-State Discrimination for both Qubits
 
 ## Implementation in QUA
-The following procedure implements Two-Qubit Randomized Benchmarking with the described setup and the *TwoQubitRb* class. The decomposition of the two-qubit unitaries into CZ and single qubit gates is given in Ref. [^5]. $${\color{red}The circuit generation is done using the *baking* tool from the *py-qua-tools* library. Randomization is done prior to the execution using tableau calculation, also to find the inverse operation. The sequences are passed to the OPX using *input stream*.}$$
+The following procedure implements Two-Qubit Randomized Benchmarking with the described setup and the *TwoQubitRb* class. The decomposition of the two-qubit unitaries into CZ and single qubit gates is given in Ref. [^5]. $${\color{red}The circuit generation}$$ is done using the *baking* tool from the *py-qua-tools* library. Randomization is done prior to the execution using tableau calculation, also to find the inverse operation. The sequences are passed to the OPX using *input stream*.
 
 [^5]: Barends, R. et al. Nature 508, 500–503 (2014)
 
