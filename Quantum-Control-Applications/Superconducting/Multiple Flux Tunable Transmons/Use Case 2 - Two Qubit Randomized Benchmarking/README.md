@@ -6,7 +6,7 @@ Author: Maximilian Zanner
 *specifically tailored setup and software environment. When adapting the code to run on your device, make sure to adjust the relevant functions and parameters and contact QM Customer Success!*
 
 ## Introduction
-Two-Qubit Randomized Benchmarking has become a popular protocol that allows to experimentally quantify the performance of a quantum processor by applying sequences of randomly sampled Clifford gates and measuring the average error rate. Due to its universality it has been implemented in various qubit platforms such as trapped-ions [^1], NMR [^2], spin [^3] and superconducting qubits [^4]. In this use-case example we introduce a possible implementation on the OPX+ using the generic *TwoQubitRb* class.
+Two-Qubit Randomized Benchmarking has become a popular protocol that allows to experimentally quantify the performance of a quantum processor by applying sequences of randomly sampled Clifford gates and measuring the average error rate. Due to its universality it has been implemented in various qubit platforms such as trapped-ions [^1], NMR [^2], spin [^3] and superconducting qubits [^4]. In this use-case example we introduce a possible implementation on the OPX+ using the current version (2023, June) of the generic *TwoQubitRb* class. An updated version can be found int the *py-qua-tools* repository.
 
 [^1]: Knill et al (2008 Phys. Rev. A 77 012307)
 [^2]: C A Ryan et al 2009 New J. Phys. 11 013034
